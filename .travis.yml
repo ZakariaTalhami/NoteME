@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "10"
+before_script:
+  - cd note-me-ui
+  - export NG_CLI_ANALYTICS=ci
+  - npm install -g @angular/cli
+  - npm install
+script: npm run build
