@@ -1,0 +1,83 @@
+.login-container {
+    margin         : auto;
+    width          : 25%;
+    min-width      : 300px;
+    padding        : 0;
+    display        : flex;
+    justify-content: center;
+    text-align     : center;
+    align-items    : center;
+    min-height     : 98vh;
+
+    h1 {
+        font-size: 42px;
+    }
+
+    mat-form-field {
+        margin-top: 10px;
+        display   : block;
+        font-size : 18px;
+    }
+
+    .login-button {
+        margin-top: 15px;
+        width     : 100%;
+        font-size : 24px;
+        height    : 50px;
+    }
+
+    .google-login-btn {
+        font-size   : 18px;
+        width       : 100%;
+        padding     : 10px;
+        border-width: 1px;
+        border-color: #7a7a7a;
+
+        img {
+            width   : 14px;
+            position: relative;
+            top     : -2px;
+        }
+    }
+
+    #or-div {
+        font-size: 22px;
+        margin   : 10px;
+    }
+
+    // img.sticker{
+    //     position       : absolute;
+    //     // position    : absolute;
+    //     // right       : 50%;
+    //     // top         : -100px;
+    //     // // width    : 100%;
+    //     // // transform: translateX(-50%);
+    // }
+    .redirect-links {
+        position: relative;
+
+        span {
+            position: absolute;
+            margin  : 15px 0;
+
+            &.pass-retrieve {
+                left: 0;
+                top : 100%;
+            }
+
+            &.sign-up-link {
+                right: 0;
+                top  : 100%;
+            }
+        }
+    }
+
+    // @media screen {
+    //     @media (max-width: 1023px) {
+    //         img {
+    //             visibility: hidden;
+    //         }
+    //     }
+
+    // }
+}
