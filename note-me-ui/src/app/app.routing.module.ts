@@ -3,11 +3,16 @@ import { Routes, RouterModule } from '@angular/router'
 import { LoginComponent } from './states/login/login.component';
 import { StatesModule } from './states/states.module';
 import { PageNotFoundComponent } from './states/page-not-found/page-not-found.component';
+import { RegisterComponent } from './states/register/register.component';
 
 const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     },
     {
         path: '**',

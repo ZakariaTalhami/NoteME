@@ -2,24 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { UserLogin } from 'src/app/models/user/user.model';
+import { User } from 'src/app/models/user/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   // TODO: Change the user class used / or change the class 
-  private _currenUserSubject: BehaviorSubject<UserLogin>;
+  private _currenUserSubject: BehaviorSubject<User>;
 
   constructor(private http: HttpClient) { 
-      this._currenUserSubject = new BehaviorSubject<UserLogin>(JSON.parse(localStorage.getItem('currentUser')));
+      this._currenUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
   }
 
   getCurrentUser(){
     return this._currenUserSubject.value;
   }
 
-  login(user: UserLogin){
+  login(user: User){
     let password = user.password;
     let username = user.username;
     // TODO: update request path 
