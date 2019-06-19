@@ -1,8 +1,8 @@
-export class UserLogin {
+export class User {
     username: string;
-    password: string;
+    password?: string;
     
-    constructor(init?: Partial<UserLogin>){
+    constructor(init?: Partial<User>){
         Object.assign(this,init);
     }
 }

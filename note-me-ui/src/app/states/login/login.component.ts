@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, AbstractControl } from '@angular/forms';
-import { UserLogin } from 'src/app/models/user/user.model';
+import { User } from 'src/app/models/user/user.model';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    let user: UserLogin = new UserLogin(this.loginForm.value);
+    let user: User = new User(this.loginForm.value);
     this.auth.login(user).pipe(first()).subscribe(
       data => {
         this.router.navigateByUrl(this.returnRoute);

@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { MaterialModule } from '../common/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   declarations: [
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RegisterComponent
   ],
   exports: [
     LoginComponent,

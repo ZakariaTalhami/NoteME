@@ -1,0 +1,86 @@
+.login-container {
+    margin         : auto;
+    width          : 25%;
+    min-width      : 300px;
+    padding        : 0;
+    display        : flex;
+    justify-content: center;
+    text-align     : center;
+    align-items    : center;
+    min-height     : 98vh;
+
+    // TODO: make a border around the form that is red, 
+    //       it should be faint, maybe use shadows instead of border
+    //       or maybe only on one side, like only the top border
+    &.error{
+
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    mat-form-field {
+        margin-top: 10px;
+        display   : block;
+        font-size : 18px;
+    }
+
+    .register-button {
+        margin    : 15px 0;
+        width     : 100%;
+        font-size : 24px;
+        height    : 50px;
+    }
+
+    .res-err-msg{
+        color: #f44336;
+        font-size: 14px;
+        opacity: 0.90;
+    }
+
+    .google-login-btn {
+        font-size   : 18px;
+        width       : 100%;
+        padding     : 10px;
+        border-width: 1px;
+        border-color: #7a7a7a;
+
+        img {
+            width   : 14px;
+            position: relative;
+            top     : -2px;
+        }
+    }
+
+    #or-div {
+        font-size: 22px;
+        margin   : 10px;
+    }
+
+    .terms-section{
+        text-align: center;
+        margin-left: 5px;
+        
+        .terms-error-message{
+            position: relative;
+            top: 0;
+            opacity: 1;
+            z-index: -1;
+            margin-top: 5px;
+            color: #f44336;
+            font-size: 13px;
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+            
+            &.show{
+                transition: opacity 0.25s cubic-bezier(0.85, 0.06, 0, 1.0) 0.1s, top 0.25s ease-in-out 0.1s;
+            }
+    
+            &.hide{
+                opacity: 0;
+                top: -25px;
+                transition: opacity 0.25s cubic-bezier(0.85, 0.06, 0, 1.0) 0.1s, top 0.25s ease-in-out 0.1s;
+            }
+        }
+    }
+}

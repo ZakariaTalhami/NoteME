@@ -1,0 +1,41 @@
+<div class="login-container" [formGroup]='registerForm'>
+  <div style="flex: 100%;">
+    <!-- TODO: Find how to align the sticker and not get it cut -->
+    <!-- <img class="sticker" src="assets/img/login-sticker.png" alt="" srcset=""> -->
+    <h1>Start using NoteME</h1>
+    <div class="res-err-msg">{{resErrorMessage}}</div>
+    <div>
+      <button mat-stroked-button class="google-login-btn">
+        <img src="assets/img/logoGoogle.svg"> Login with Google
+      </button>
+      <div id="or-div">or</div>
+    </div>
+    <mat-form-field hideRequiredMarker>
+      <mat-label>Username / email</mat-label>
+      <input matInput formControlName="username">
+      <mat-error *ngIf="registerForm.controls.username.invalid">
+        {{getUsernameError()}}
+      </mat-error>
+    </mat-form-field>
+    <div formGroupName="passwords">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="passwordControllers.password.invalid">{{getPasswordErrors()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" [errorStateMatcher]="matcher" formControlName="confirmPassword">
+        <mat-error *ngIf="controllers.passwords.invalid">{{getConfirmPasswordErrors()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="terms-section" style="text-align: left; margin-left: 5px">
+      <mat-checkbox formControlName='acceptTerms'>I accept <a href="">terms and conditions</a></mat-checkbox>
+      <div class="terms-error-message"
+        [class.hide]="!(controllers.acceptTerms.invalid && controllers.acceptTerms.touched)"
+        [class.show]="controllers.acceptTerms.invalid && controllers.acceptTerms.touched">Must accept the terms</div>
+    </div>
+    <button mat-raised-button class="register-button" color="primary" [disabled]='this.registerForm.invalid'
+      (click)="onSubmit()">Sign Up</button>
+  </div>
+</div>
