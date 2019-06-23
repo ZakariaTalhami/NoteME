@@ -7,6 +7,7 @@ import {
   MatRippleModule,
   MatOptionModule,
   MatSelectModule,
+  MatToolbarModule,
   MatCheckboxModule
 } from '@angular/material'
 
@@ -19,6 +20,7 @@ import {
     MatOptionModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatToolbarModule,
     MatRippleModule
   ],
   exports:[
@@ -28,6 +30,7 @@ import {
     MatOptionModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatToolbarModule,
     MatRippleModule
   ]
 })
