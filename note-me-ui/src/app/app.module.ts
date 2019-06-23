@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ServicesModule } from './services/services.module';
 import { HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from './common/http-interceptors';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { httpInterceptorProviders } from './common/http-interceptors';
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule,
     BrowserAnimationsModule,
     ServicesModule,
     StatesModule,
