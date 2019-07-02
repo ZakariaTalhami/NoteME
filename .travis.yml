@@ -6,4 +6,13 @@ before_script:
   - export NG_CLI_ANALYTICS=ci
   - npm install -g @angular/cli
   - npm install
-script: npm run build
+jobs:
+  allow_failures:
+    - env: ALLOW_FAIL="-ALLOW_FAIL"
+  include:
+    - stage: build
+      script: npm run build
+    - stage: linter
+      env: 
+        ALLOW_FAIL="-ALLOW_FAIL"
+      script: ng lint

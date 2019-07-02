@@ -1,0 +1,20 @@
+.price {
+    position: relative;
+    font-size: 2rem;
+
+    &::before{
+        content: "$";
+        position: relative;
+        font-size: 1rem;
+        padding: 5px;
+        top: -7px; 
+    }
+
+    &::after{
+        content: "/month";
+        position: relative;
+        font-size: 1rem;
+        padding: 5px;
+        top: 25px; 
+    }
+}
