@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router'
 import { LoginComponent } from './states/login/login.component';
-import { StatesModule } from './states/states.module';
 import { PageNotFoundComponent } from './states/page-not-found/page-not-found.component';
 import { RegisterComponent } from './states/register/register.component';
 
@@ -13,6 +12,15 @@ const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent
+    },
+    {
+        path: '',
+        children: [
+            {
+                path: '',
+                loadChildren: './states/main-base/main-base.module#MainBaseModule'
+            }
+        ]
     },
     {
         path: '**',
